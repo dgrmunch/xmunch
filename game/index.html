@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+        <meta name="creator" content="Procoding" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" id="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no" />
+		
+		<title>Game of Life</title>															<!-- displayName -->
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />							<!-- style.css -->
+		
+		<script type="text/javascript" src="./processing.js"></script>				<!-- libPath -->
+		<script type="text/javascript" src="./processing-mobile.js"></script>		<!-- libPath -->
+		<script type="text/javascript" src="./pjsinit.js?version=250"></script>	<!-- libPath -->
+	</head>
+	<body background="#000">
+		
+		<canvas id="canvas" data-processing-sources="sketch.pde" resize></canvas>			<!-- sketch.pde -->
+		
+		<script type="text/javascript">
+setTimeout( function() { procoding.runStandalone(); }, 500 );</script>									<!-- export script -->
+		
+	</body>
+</html>
