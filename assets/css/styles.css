@@ -174,13 +174,18 @@ background-repeat: no-repeat;
 /*! padding: 20px; */
 font-weight: bold;
 background-color: black;
-border: 1px solid lightgreen;
+border: 1px solid #eaeaea;
 width: 200px;
 /*! margin: 20px; */
 }
 .header .profile-image {
-margin-right: 30px;
+margin-left: 70px;
 }
+
+img {
+  filter: grayscale(100%);
+}
+
 .header .profile-content .name {
 color: white;
 font-size: 34px;
