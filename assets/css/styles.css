@@ -85,7 +85,7 @@ color: #3aaa64;
 a:hover {
 text-decoration: underline;
 color: #5f6b77;
-color: #2d844e;
+color: white;
 }
 a:focus {
 text-decoration: none;
@@ -177,6 +177,7 @@ background-color: black;
 border: 1px solid #eaeaea;
 width: 200px;
 /*! margin: 20px; */
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 .header .profile-image {
 margin-left: 70px;
@@ -189,22 +190,22 @@ img {
 .header .profile-content .name {
 color: white;
 font-size: 34px;
-margin-bottom: 30px;
+margin-bottom: 10px;
 margin-top: 30px;
-font-family: monospace;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-weight: lighter;
 }
 .header .profile-content .desc {
 color: lightgray;
-font-family: monospace;
-font-weight: 400;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: 1;
 font-size: 24px;
 margin-top: 0;
 margin-bottom: 15px;
 }
 
 .header .profile-content .social a {
-background: #f0f0f0;
+background: #121212;
 width: 36px;
 height: 36px;
 display: inline-block;
@@ -216,15 +217,15 @@ border-radius: 50%;
 -moz-background-clip: padding;
 -webkit-background-clip: padding-box;
 background-clip: padding-box;
-color: #000;
+color: #6e6e6e;
 text-align: center;
 margin-bottom: 20px;
 }
 .header .profile-content .social a:hover {
-background: #47a5a5;
+background: white;
 }
 }.header .profile-content .social a {
-background: #47a5a5;
+background:white;
 }
 .header .profile-content .social a .fa {
 font-size: 20px;
@@ -601,4 +602,10 @@ color: #fb866a;
 .container {
   width: 1360px;
 }
+}
+
+.btn-invert{
+  background: #000;
+ color: white;
+ border: 1px dashed #595959 !IMPORTANT;
 }
