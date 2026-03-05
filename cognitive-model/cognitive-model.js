@@ -436,6 +436,13 @@ class CognitiveModel {
 // 3. Visualization Renderer (Canvas-based)
 // ============================================================
 
+/**
+ * Convert a hex color and alpha (0-1) to a hex color string with alpha channel.
+ */
+function colorWithAlpha(hexColor, alpha) {
+  return hexColor + Math.round(alpha * 255).toString(16).padStart(2, "0");
+}
+
 class CognitiveModelRenderer {
   constructor(canvasId, model) {
     this.canvas = document.getElementById(canvasId);
@@ -552,8 +559,8 @@ class CognitiveModelRenderer {
           node.x * w, node.y * h, 0,
           node.x * w, node.y * h, radius * 3
         );
-        gradient.addColorStop(0, cat.color + "60");
-        gradient.addColorStop(1, cat.color + "00");
+        gradient.addColorStop(0, colorWithAlpha(cat.color, 0.38));
+        gradient.addColorStop(1, colorWithAlpha(cat.color, 0));
         ctx.beginPath();
         ctx.arc(node.x * w, node.y * h, radius * 3, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -564,7 +571,7 @@ class CognitiveModelRenderer {
       ctx.beginPath();
       ctx.arc(node.x * w, node.y * h, radius, 0, Math.PI * 2);
       const alpha = 0.3 + node.activation * 0.7;
-      ctx.fillStyle = cat.color + Math.round(alpha * 255).toString(16).padStart(2, "0");
+      ctx.fillStyle = colorWithAlpha(cat.color, alpha);
       ctx.fill();
 
       // Border for hovered/selected
@@ -682,7 +689,7 @@ document.addEventListener("DOMContentLoaded", () => {
       model.setConsciousnessState(value);
       if (sliderLabel) {
         const labels = ["Baseline", "Mild Shift", "Moderate Alteration", "Deep Alteration", "Peak State"];
-        const idx = Math.min(4, Math.floor(value * 4.99));
+        const idx = Math.min(labels.length - 1, Math.floor(value * labels.length));
         sliderLabel.textContent = labels[idx];
       }
     });
