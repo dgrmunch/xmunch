@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Cognitive Phenomenology Explorer - A computational model of cognition based on phenomenological research">
+  <meta name="author" content="Diego González Rodríguez">
+  <title>Cognitive Phenomenology Explorer</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Cognitive Phenomenology Explorer</h1>
+      <p class="subtitle">A Computational Model of Cognition Based on Phenomenological Research</p>
+      <p class="description">
+        Interactive semantic network modeling phenomenological concept activation and spreading dynamics.
+        Click nodes to activate them. Adjust the consciousness state parameter to explore how
+        network dynamics change from baseline to altered states.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls-section">
+      <div class="control-group">
+        <label for="consciousnessSlider">Consciousness State Parameter</label>
+        <div class="slider-container">
+          <span class="slider-label-left">Baseline</span>
+          <input type="range" id="consciousnessSlider" min="0" max="1" step="0.01" value="0">
+          <span class="slider-label-right">Altered</span>
+        </div>
+        <div class="slider-value" id="consciousnessLabel">Baseline</div>
+      </div>
+      <div class="control-group">
+        <button id="resetBtn">Reset Network</button>
+      </div>
+    </section>
+
+    <section class="visualization-section">
+      <div class="canvas-container">
+        <canvas id="networkCanvas"></canvas>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-panel">
+        <h3>Current State</h3>
+        <div class="state-indicator">
+          <span class="state-label" id="stateLabel">Baseline Consciousness</span>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-label">Network Entropy:</span>
+            <span class="metric-value" id="entropyValue">0.00</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Active Nodes:</span>
+            <span class="metric-value" id="activeCount">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h3>Category Activations</h3>
+        <div class="category-bars">
+          <div class="category-bar-row">
+            <span class="cat-label">Somatic</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-SOMATIC"></div></div>
+          </div>
+          <div class="category-bar-row">
+            <span class="cat-label">Kinetic</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-KINETIC"></div></div>
+          </div>
+          <div class="category-bar-row">
+            <span class="cat-label">Emotional</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-EMOTIONAL"></div></div>
+          </div>
+          <div class="category-bar-row">
+            <span class="cat-label">Visual</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-VISUAL"></div></div>
+          </div>
+          <div class="category-bar-row">
+            <span class="cat-label">Cognitive</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-COGNITIVE"></div></div>
+          </div>
+          <div class="category-bar-row">
+            <span class="cat-label">Narrative</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-NARRATIVE"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h3>Selected Node</h3>
+        <div id="nodeInfo" class="node-info">
+          Click on a node in the network to activate it and see details.
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>About This Model</h2>
+      <div class="about-content">
+        <div class="about-card">
+          <h3>Semantic Network</h3>
+          <p>
+            Phenomenological concepts (somatic sensations, kinetic phenomena, emotions, visual experiences,
+            cognitive shifts, and narrative/self processes) are represented as nodes in a semantic network.
+            Edges represent co-occurrence and temporal sequence relationships.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Spreading Activation</h3>
+          <p>
+            When a concept is activated (clicked), activation spreads through the network along weighted
+            connections. This models how activating one aspect of experience can prime or trigger related
+            phenomenological dimensions.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Consciousness Parameter</h3>
+          <p>
+            The slider modulates edge weights between baseline and altered-state configurations. At higher
+            values, cross-modal connections strengthen, activation spreads more broadly, and network
+            entropy increases — modeling reduced top-down predictive constraint.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>State Classification</h3>
+          <p>
+            The model classifies the emergent network activation pattern into phenomenological state
+            categories, showing which experiential domains are most active. This bridges computational
+            dynamics and qualitative experience categories from the CEFE questionnaire.
+          </p>
+        </div>
+      </div>
+      <p class="reference">
+        See <a href="PROPOSAL.md">PROPOSAL.md</a> for the full proposal on transforming a phenomenology
+        paper into a computational model of cognition.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Diego González Rodríguez | <a href="../index.html">xmunch.com</a></p>
+  </footer>
+
+  <script src="cognitive-model.js"></script>
+</body>
+
+</html>
